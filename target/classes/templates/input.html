@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+	<meta charset="UTF-8">
+	<title>Insert New Phone</title>
+	<link rel="stylesheet" type="text/css" href=phones_style.css>
+	
+</head>
+<body>
+	<table>
+		<form th:object="${newPhone}" "@{/update/{id}(id=${newContact.id})}" method='POST'>
+			<tr><td>Manufacturer:</td> <td><input name="manufacturer" size="20" th:field="*{manufacturer}"></td></tr>
+			<tr><td>Model:</td> <td><input name="model" size="20" th:field="*{model}"></td></tr>
+			<tr><td>Foldable?:</td> <td><input type="checkbox" name="foldable" th:field="*{foldable}"></td></tr>
+			<tr><td>CPU Cores:</td> <td><input name="cpuCores" size="5" th:field="*{cpuCores}"></td></tr>
+			<tr><td><input name="submit" type="submit" value="submit" /></td></tr>
+		</form>
+	</table>
+	<div class="link">
+		<a href="viewAll">View all Phones</a> 
+	</div>
+</body>
+
+</html>

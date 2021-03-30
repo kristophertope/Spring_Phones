@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+	<meta charset="UTF-8">
+	<title>View All Phones</title>
+	<link rel="stylesheet" type="text/css" href=phones_style.css>
+	<style>
+		table, tr, td{
+			border: 2px solid black;
+			border-collapse: collapse;
+		}
+		tr:first-of-type{
+			font-weight: 900;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<table>
+			<tr>
+				<td>#</td>
+				<td>Manufacturer</td>
+				<td>Model</td>
+				<td>Foldable?</td>
+				<td>CPU Cores</td>
+			</tr>
+			<tr th:each="currentPhone : ${phones}" >
+				<td th:text="${currentPhone.id}" />
+				<td th:text="${currentPhone.manufacturer}" />
+				<td th:text="${currentPhone.model}" />
+				<td th:text="${currentPhone.foldable}" /> 
+				<td th:text="${currentPhone.cpuCores}" /> 
+				<td><a style="font-size: 16px; padding:1;" th:href="@{/edit/{id}(id=${currentPhone.id})}">edit</a></td>
+				<td><a style="font-size: 16px; padding:1;" th:href="@{/delete/{id}(id=${currentPhone.id})}">delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<div class="link">
+		<a href="../inputPhone">Add a new phone</a> 
+	</div>
+</body>
+</html>

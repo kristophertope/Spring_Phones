@@ -1,0 +1,38 @@
+*{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+}
+
+a{
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 8px;
+	background-color: black;
+	color: white;
+	text-decoration: none;
+}
+
+a:hover{
+	background-color: white;
+	color: black;
+}
+
+.link{
+	position: relative;
+	top: 20px;
+}
+
+form{
+	width: 300px;
+	text-align: right;
+}
+
+form div{
+	margin-bottom: 5px;
+}
+
+td{
+	padding: 5px;
+	white-space: nowrap;
+}
+
