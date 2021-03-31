@@ -3,7 +3,7 @@
 	font-size: 22px;
 }
 
-a{
+a, input[type="submit"]{
 	padding: 5px;
 	border: 1px solid black;
 	border-radius: 8px;
@@ -12,7 +12,7 @@ a{
 	text-decoration: none;
 }
 
-a:hover{
+a:hover, input[type="submit"]:hover{
 	background-color: white;
 	color: black;
 }
@@ -36,3 +36,13 @@ td{
 	white-space: nowrap;
 }
 
+input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	color: red;
+	border: 2px solid red;
+}
+
+input[type=checkbox]:checked{
+	color: red;
+}
