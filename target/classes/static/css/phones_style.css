@@ -3,6 +3,22 @@
 	font-size: 22px;
 }
 
+body{
+	display: flex;
+	flex-direction: column;
+  	align-items: center;
+ 	justify-content: center;
+ 	height: 100vh;
+}
+
+h1{
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 200px;
+	font-weight: 900;
+	margin: 0;
+	padding: 0;
+}
+
 a, input[type="submit"]{
 	padding: 5px;
 	border: 1px solid black;
@@ -20,11 +36,6 @@ a:hover, input[type="submit"]:hover{
 .link{
 	position: relative;
 	top: 20px;
-}
-
-form{
-	width: 300px;
-	text-align: right;
 }
 
 form div{
