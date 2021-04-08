@@ -47,7 +47,7 @@ public class WebController {
 	}
 	
 	@PostMapping("/update/{id}")
-		public String reviseContact(Phone p, Model model) {
+		public String revisePhone(Phone p, Model model) {
 		repo.save(p);
 		return viewAllPhones(model); 
 	}

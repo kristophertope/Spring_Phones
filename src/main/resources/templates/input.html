@@ -4,11 +4,36 @@
 	<meta charset="UTF-8">
 	<title>Insert New Phone</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/phones_style.css}">
+	<script type = "text/javascript">
+		function validate() {
+			if (document.phoneEntry.manufacturer.value == ""){
+				alert("Manufacturer name required. Please try again.");
+				document.phoneEntry.manufacturer.focus();
+				return false
+			}
+			if (document.phoneEntry.model.value == ""){
+				alert("Model name required. Please try again.");
+				document.phoneEntry.model.focus();
+				return false
+			}
+			if (document.phoneEntry.cpuCores.value == ""){
+				alert("CPU core count required. Please try again.");
+				document.phoneEntry.manufacturer.focus();
+				return false
+			}
+			if (isNaN(document.phoneEntry.cpuCores.value) || document.phoneEntry.cpuCores.value < 1 || document.phoneEntry.cpuCores.value > 100){
+				alert("CPU core count invalid. Please try again.");
+				document.phoneEntry.manufacturer.focus();
+				return false
+			}
+			return(true);
+		}
+	</script>
 </head>
 <body>
 	<h1>PHONE ENTRY</h1>
 	<table>
-		<form th:object="${newPhone}" "@{/update/{id}(id=${newPhone.id})}" method='POST'>
+		<form th:object="${newPhone}" "@{/update/{id}(id=${newPhone.id})}" name = "phoneEntry" method='POST' onsubmit = "return(validate());">
 			<tr><td>Manufacturer:</td> <td><input name="manufacturer" size="20" th:field="*{manufacturer}"></td></tr>
 			<tr><td>Model:</td> <td><input name="model" size="20" th:field="*{model}"></td></tr>
 			<tr><td>Foldable?:</td> <td><input type="checkbox" name="foldable" th:field="*{foldable}"></td></tr>
